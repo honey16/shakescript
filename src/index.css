@@ -9,6 +9,27 @@
   font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #18181b;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3f3f46;
+  border-radius: 10px;
+  border: 2px solid #18181b;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 #18181b;
+  -ms-overflow-style: none;
+}
+
 /* Additional body fixes */
 
 /* Add these styles to fix layout issues */
@@ -102,4 +123,34 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes beam {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+}
+
+.tracer-beam {
+  position: relative;
+}
+
+.tracer-beam::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(16, 185, 129, 0.4) 50%,
+    transparent 100%
+  );
+  animation: beam 3s infinite;
+  pointer-events: none;
 }

@@ -20,7 +20,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-lg"
+      className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-lg border border-[#2a2a2a]"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -38,7 +38,7 @@ export const Navbar: React.FC = () => {
                     fillOpacity="0.4"
                   />
                 </svg>
-                <span className="ml-2 text-white font-bold">ShakeScript</span>
+                <span className="ml-2 text-white text-xl font-bold">ShakeScript</span>
               </Link>
             </div>
             <div className="hidden md:block">
@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-300 hover:text-white px-5 py-2 rounded-md text-m font-medium"
                   >
                     {item.name}
                   </Link>

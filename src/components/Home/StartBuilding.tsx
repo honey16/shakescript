@@ -1,8 +1,7 @@
-"use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
+import DashboardImg  from "../../assets/images/start-generating.png";
 
 interface StartBuildingSectionProps {
   className?: string;
@@ -47,6 +46,31 @@ export const StartBuildingSection: React.FC<StartBuildingSectionProps> = ({ clas
           <Github className="w-5 h-5" />
           Official GitHub library
         </button>
+      </motion.div>
+
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 10,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.3,
+          delay: 1.2,
+        }}
+        className="relative z-10 mt-20 w-[70%] rounded-3xl border border-neutral-200 bg-neutral-100 p-4 shadow-md dark:border-neutral-800 dark:bg-neutral-900"
+      >
+        <div className="w-full overflow-hidden rounded-xl border border-gray-300 dark:border-gray-700">
+          <img
+            src={DashboardImg}
+            alt="Landing page preview"
+            className="aspect-[1919/908] h-auto w-full object-cover"
+            loading="lazy"
+          />
+        </div>
       </motion.div>
     </motion.section>
   );
